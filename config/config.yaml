@@ -1,0 +1,16 @@
+camera_robot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers ---------------------------------------
+  slider_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: slider_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  arm_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: arm_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
